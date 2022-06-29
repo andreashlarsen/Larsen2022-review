@@ -1,3 +1,3 @@
-# Larsen2022-review_membrane_curvature
+# Larsen2022-review
 scripts for review
 Larsen(2022). Molecular dynamics simulations of curved lipid membranes. 
