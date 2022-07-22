@@ -1,5 +1,5 @@
 # Scripts for Larsen2022-review
-scripts for review article:
+Scripts for review article:
 Larsen (2022). Molecular dynamics simulations of curved lipid membranes. Int. J. Mol. Sci. 28: 8098.    
 https://www.mdpi.com/1422-0067/23/15/8098    
 
