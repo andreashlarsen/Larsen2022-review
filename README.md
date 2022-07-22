@@ -6,7 +6,7 @@ https://www.mdpi.com/1422-0067/23/15/8098
 ## Prerequisites 
 All scripts  require GROMACS, and were tested in GROMACS 2021.4 on a GPU-supported workstation.   
 The scripts can be run with minor modifications, e.g. change of paths etc.   
-All simulateions in the examples were done in Martini, but most of the methods are transfereable to be used with other force fields (see further info in the paper).        
+All simulateions in the examples were done in Martini2.2, but most of the methods are transfereable to be used with other force fields (more info in the paper).        
 
 ### EnCurv 
 The EnCurv setup requires that EnCurv is installed with PLUMED, and PLUMED (with EnCurv) pathced before installing GROMACS. Tested with PLUMED version 2.7.2.    
