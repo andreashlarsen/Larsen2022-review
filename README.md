@@ -13,8 +13,8 @@ The EnCurv setup requires that EnCurv is installed with PLUMED, and PLUMED (with
 
 ## Notes
 
-### Buckling notes
+### Two scripts for Buckling
 There are two scripts for membrane buckling, as described in the review. One uses pressure for buckling the membrane. The other scripts scales all coordinates along one axis for step-wise buckling of the membrane. 
 
 ### Use/cite
-Please use the scripts for your research. I would appreciate acknowledgement by citing the review paper, and, of course, the relevant original papers. 
+Please use the scripts freely for your research. I would appreciate acknowledgement by citing the review paper, and, of course, the relevant original papers. 
