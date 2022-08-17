@@ -37,6 +37,25 @@ gmx grompp -f eq.mdp -c min.gro -r min.gro -p topol.top -o eq.tpr -n index.ndx -
 gmx mdrun -deffnm eq -v -pin on -ntomp $CPU -ntmpi 1 -gpu_id $GPU -pinoffset $pinoffset -quiet
 
 # encurv
+cat << EOF > plumed3.dat
+# Define dummy atom at the center of curvature
+piv: FIXEDATOM AT=16,2,-1
+
+# All atoms in the membrane
+membr: GROUP ATOMS=1-8424
+
+# Define EnCurv collective variable with R=10
+sec1: ENCURV ATOMS=piv,membr NBINS=50 R=10 XSPAN=15
+
+# Harmonic restraint on radial component
+restr1: RESTRAINT ARG=sec1.val KAPPA=100 AT=10 STRIDE=2
+
+# Harmonic restraint on angular component
+#angrestr: RESTRAINT ARG=sec1.angle KAPPA=10000 AT=0 STRIDE=2
+
+# Pring RMSD
+PRINT STRIDE=100 ARG=sec1.rmsd,sec1.angle FILE=COLVAR
+EOF
 gmx grompp -f md.mdp -p -c eq.gro -n -quiet -o md.tpr
 gmx mdrun -v -deffnm md -plumed plumed3.dat -cpi md.cpt -pin on -ntomp $CPU -ntmpi 1 -gpu_id $GPU -pinoffset $pinoffset -quiet
 
