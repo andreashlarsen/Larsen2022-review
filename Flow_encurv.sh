@@ -6,7 +6,7 @@ CPU=4
 GPU=0
 
 # make bilayer with insane
-/usr/bin/python2.7 insane.py -o bilayer.gro -p topol.top -x 30 -y 7 -z 15 -l POPC -sol W:9 -sol WF:1 -salt 0.1 -neutral
+/usr/bin/python2.7 insane.py -o bilayer.gro -p topol.top -x 30 -y 7 -z 15 -l POPC -sol W:9 -sol WF:1 -salt 0.1 
 
 # change topology file
 sed -i -e 's/#include "martini.itp"//g' topol.top
