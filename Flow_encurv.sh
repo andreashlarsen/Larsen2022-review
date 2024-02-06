@@ -56,7 +56,7 @@ restr1: RESTRAINT ARG=sec1.val KAPPA=100 AT=10 STRIDE=2
 # Pring RMSD
 PRINT STRIDE=100 ARG=sec1.rmsd,sec1.angle FILE=COLVAR
 EOF
-gmx grompp -f md.mdp -p -c eq.gro -n -quiet -o md.tpr
+gmx grompp -f md.mdp -p topol.top -c eq.gro -n index.ndx -quiet -o md.tpr
 gmx mdrun -v -deffnm md -plumed plumed3.dat -cpi md.cpt -pin on -ntomp $CPU -ntmpi 1 -gpu_id $GPU -pinoffset $pinoffset -quiet
 
 # vizualize
