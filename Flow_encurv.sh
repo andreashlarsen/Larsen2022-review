@@ -4,6 +4,7 @@ source ~/.bashrc
 pinoffset=0
 CPU=4
 GPU=0
+ffdir=path-to-martini-itp-files
 
 # make bilayer with insane
 /usr/bin/python2.7 insane.py -o bilayer.gro -p topol.top -x 30 -y 7 -z 15 -l POPC -sol W:9 -sol WF:1 -salt 0.1 
