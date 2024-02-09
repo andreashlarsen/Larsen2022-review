@@ -36,7 +36,7 @@ gmx make_ndx -f bilayer.gro -quiet < index.input
 rm index.input
 gmx select -f min.gro -selrpos res_com -s min.tpr -quiet -on select.ndx -select 'same residue as resname POPC and not within 8 of [10, 10, 15]'
 cat index.ndx select.ndx > index2.ndx
-sed -i -e 's/same_residue_as_resname_POPC_and_not_within_8_of_.*/patch ]/g' index2.ndx
+sed -i -e 's/.*same_residue_as_resname_POPC_and_not_within_8_of_.*/[ patch ]/g' index2.ndx
 gmx grompp -f eq.mdp -c min.gro -r min.gro -p topol.top -o eq.tpr -n index2.ndx -quiet
 gmx mdrun -deffnm eq -v -pin on -ntomp $CPU -ntmpi 1 -gpu_id $GPU -pinoffset $pinoffset -quiet
 
